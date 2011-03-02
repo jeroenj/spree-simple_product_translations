@@ -1,4 +1,6 @@
 require 'spree_core'
+require 'spree_product_translations'
+
 require 'spree_simple_product_translations_hooks'
 require 'batch_translation'
 
