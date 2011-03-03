@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    spree_simple_product_translations (0.0.1)
+    spree_simple_product_translations (0.0.2)
       spree_core (>= 0.40.3)
-      spree_product_translations (~> 0.0.1)
+      spree_product_translations (~> 0.0.2)
 
 GEM
   remote: http://rubygems.org/
@@ -105,7 +105,7 @@ GEM
       state_machine (= 0.9.4)
       stringex (= 1.0.3)
       will_paginate (= 3.0.pre2)
-    spree_product_translations (0.0.1)
+    spree_product_translations (0.0.2)
       globalize3 (~> 0.1.0.beta)
       spree_core (>= 0.40.3)
     state_machine (0.9.4)

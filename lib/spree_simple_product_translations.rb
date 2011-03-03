@@ -16,6 +16,7 @@ module SpreeSimpleProductTranslations
 
       ::Product.send :include, Models::Product
       ::Property.send :include, Models::Property
+      ::Taxon.send :include, Models::Taxon
     end
 
     config.to_prepare &method(:activate).to_proc
