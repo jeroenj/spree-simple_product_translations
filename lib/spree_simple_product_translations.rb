@@ -14,9 +14,17 @@ module SpreeSimpleProductTranslations
         Rails.env.production? ? require(c) : load(c)
       end
 
-      ::Product.send :include, Models::Product
-      ::Property.send :include, Models::Property
-      ::Taxon.send :include, Models::Taxon
+      ::Product.class_eval do
+        accepts_nested_attributes_for :translations
+      end
+
+      ::Property.class_eval do
+        accepts_nested_attributes_for :translations
+      end
+
+      ::Taxon.class_eval do
+        accepts_nested_attributes_for :translations
+      end
     end
 
     config.to_prepare &method(:activate).to_proc
