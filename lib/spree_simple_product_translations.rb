@@ -15,6 +15,7 @@ module SpreeSimpleProductTranslations
       end
 
       ::Product.send :include, Models::Product
+      ::Property.send :include, Models::Property
     end
 
     config.to_prepare &method(:activate).to_proc
