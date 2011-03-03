@@ -7,7 +7,7 @@ module ActionView
         raise ArgumentError, "Missing block" unless block_given?
         @index = @index ? @index + 1 : 1
         object_name = "#{@object_name}[translations_attributes][#{@index}]"
-        form_object = @object || @object_name.to_s.capitalize.constantize.new
+        form_object = @object || @object_name.to_s.camelize.constantize.new
         object = form_object.translations.select{|t| t.locale.to_s == locale}.first || form_object.translations.find_by_locale(locale.to_s)
         @template.concat @template.hidden_field_tag("#{object_name}[id]", object ? object.id : "")
         @template.concat @template.hidden_field_tag("#{object_name}[locale]", locale)
