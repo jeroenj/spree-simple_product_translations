@@ -26,6 +26,11 @@ If you are using the fallbacks, you might want to use [my fork](https://github.c
 For those interested, you can follow [the pull request here](https://github.com/svenfuchs/globalize3/pull/32).
 
 # To add in future releases
+* Add form to:
+ * Prototype
+ * Taxonomy
+ * OptionType
+ * OptionValue
 * Tests
 * Configuration option for which locales te load
 * Better design?
