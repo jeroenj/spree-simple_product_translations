@@ -29,6 +29,10 @@ module SpreeSimpleProductTranslations
       ::OptionType.class_eval do
         accepts_nested_attributes_for :translations
       end
+
+      ::OptionValue.class_eval do
+        accepts_nested_attributes_for :translations
+      end
     end
 
     config.to_prepare &method(:activate).to_proc
