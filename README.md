@@ -27,10 +27,10 @@ For those interested, you can follow [the pull request here](https://github.com/
 
 # To add in future releases
 * Add form to:
- * Prototype
- * Taxonomy
- * OptionType
- * OptionValue
+   + Prototype
+   + Taxonomy
+   + OptionType
+   + OptionValue
 * Tests
 * Configuration option for which locales te load
 * Better design?
