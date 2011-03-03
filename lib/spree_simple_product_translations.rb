@@ -25,6 +25,10 @@ module SpreeSimpleProductTranslations
       ::Taxon.class_eval do
         accepts_nested_attributes_for :translations
       end
+
+      ::OptionType.class_eval do
+        accepts_nested_attributes_for :translations
+      end
     end
 
     config.to_prepare &method(:activate).to_proc
