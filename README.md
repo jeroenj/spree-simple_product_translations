@@ -29,8 +29,6 @@ For those interested, you can follow [the pull request here](https://github.com/
 * Add form to:
    + Prototype
    + Taxonomy
-   + OptionType
-   + OptionValue
 * Tests
 * Configuration option for which locales te load
 * Better design?
