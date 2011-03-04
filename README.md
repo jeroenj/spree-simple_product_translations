@@ -11,10 +11,18 @@ Then install the gem:
 
     bundle install
 
-Then copy the assets to your spree application:
+Then copy the migrations and assets to your spree application:
 
     rake spree_product_translations:install
     rake spree_simple_product_translations:install
+
+Finally migrate your database:
+
+    rake db:migrate
+    
+If you have pre-existing data, you'll need to run this rake task:
+
+    rake spree:extensions:product_translations:globalize_legacy_data
 
 # Open issues
 In the current version of [Globalize3](https://github.com/svenfuchs/globalize3) there is an issue with fallbacks. When you add new translations in the forms, but leave some of them blank, they won't fall back to the default locale. This is because [Globalize3](https://github.com/svenfuchs/globalize3) only loads fallbacks when the values are nil. Because of the way Rails handles these attributes, they will be stored as blank strings into the database.
