@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email             = 'jacobsjeroen@gmail.com'
   s.homepage          = 'https://github.com/jeroenj/spree-simple_product_translations'
 
-  s.files        = Dir['README.md', 'lib/**/*', 'app/**/*']
+  s.files        = Dir['README.md', 'lib/**/*', 'app/**/*', 'public/**/*']
   s.require_path = 'lib'
   s.requirements << 'none'
 
