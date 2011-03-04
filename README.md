@@ -19,7 +19,7 @@ Then copy the migrations and assets to your spree application:
 Finally migrate your database:
 
     rake db:migrate
-    
+
 If you have pre-existing data, you'll need to run this rake task:
 
     rake spree:extensions:product_translations:globalize_legacy_data
