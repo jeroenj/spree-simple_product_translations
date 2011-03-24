@@ -1,5 +1,5 @@
 <%= f.field_container :name do %>
-  <%= f.label :name, t("name") %><br />
+  <%= f.label :name, t("name") %> <span class="required">*</span><br />
   <%= f.text_field :name %>
   <%= f.error_message_on :name %>
 <% end %>
