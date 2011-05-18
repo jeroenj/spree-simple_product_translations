@@ -11,10 +11,8 @@
     <% I18n.available_locales.each do |l| %>
       <div id="tabs-<%= l %>">
         <%= f.globalize_fields_for l do |g| %>
-          <% default_locale = l.to_sym == I18n.default_locale %>
-          <% g = f if default_locale %>
           <%= f.field_container :name do %>
-            <%= g.label :name, t("name") %> <% if default_locale %><span class="required">*</span><% end %><br />
+            <%= g.label :name, t("name") %> <% if l.to_sym == I18n.default_locale %><span class="required">*</span><% end %><br />
             <%= error_message_on :taxon, :name, :class => 'fullwidth title'  %>
             <%= g.text_field :name %>
           <% end %>

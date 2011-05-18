@@ -5,10 +5,8 @@
     <% I18n.available_locales.each do |l| %>
       <p>
         <%= f.globalize_fields_for l do |g| %>
-          <% default_locale = l.to_sym == I18n.default_locale %>
-          <% g = f if default_locale %>
           <%= g.label :presentation, "#{t(l)}: " %>
-          <%= g.text_field :presentation %><% if default_locale %><span class="required">*</span><% end %>
+          <%= g.text_field :presentation %><% if l.to_sym == I18n.default_locale %><span class="required">*</span><% end %>
         <% end %>
       </p>
     <% end %>

@@ -29,7 +29,7 @@ In the current version of [Globalize3](https://github.com/svenfuchs/globalize3) 
 
 If you are using the fallbacks, you might want to use [my fork](https://github.com/jeroenj/globalize3) of [Globalize3](https://github.com/svenfuchs/globalize3) in your Gemfile until it gets merged into [Globalize3](https://github.com/svenfuchs/globalize3)'s [master branch](https://github.com/svenfuchs/globalize3):
 
-    gem 'globalize3', :git => 'git://github.com/jeroenj/globalize3.git'
+    gem 'globalize3', :git => 'git://github.com/jeroenj/globalize3.git', :branch => 'fallbacks-master'
 
 For those interested, you can follow [the pull request here](https://github.com/svenfuchs/globalize3/pull/32).
 

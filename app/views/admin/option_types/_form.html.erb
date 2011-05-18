@@ -16,10 +16,8 @@
   <% I18n.available_locales.each do |l| %>
     <div id="tabs-<%= l %>">
       <%= f.globalize_fields_for l do |g| %>
-        <% default_locale = l.to_sym == I18n.default_locale %>
-        <% g = f if default_locale %>
         <%= f.field_container :presentation do %>
-          <%= g.label :presentation, t("presentation") %> <% if default_locale %><span class="required">*</span><% end %><br />
+          <%= g.label :presentation, t("presentation") %> <% if l.to_sym == I18n.default_locale %><span class="required">*</span><% end %><br />
           <%= g.text_field :presentation %>
           <%= f.error_message_on :presentation %>
         <% end %>
