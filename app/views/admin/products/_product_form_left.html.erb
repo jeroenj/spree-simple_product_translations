@@ -14,7 +14,7 @@
       <%= f.globalize_fields_for l do |g| %>
         <% default_locale = l.to_sym == I18n.default_locale %>
         <%= f.field_container :name do %>
-          <%= g.label :name, t("name") %> <% if default_locale %><span class="required">*</span><br /><% end %>
+          <%= g.label :name, t("name") %> <% if default_locale %><span class="required">*</span><% end %><br />
           <%= g.text_field :name, :class => 'fullwidth title'  %>
           <%= f.error_message_on :name %>
         <% end %>
