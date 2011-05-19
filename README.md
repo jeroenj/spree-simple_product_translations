@@ -32,7 +32,7 @@ If you are using the fallbacks, you might want to use [my fork](https://github.c
 
     gem 'globalize3', :git => 'git://github.com/jeroenj/globalize3.git', :branch => 'fallbacks-master'
 
-For those interested, you can follow [the pull request here](https://github.com/svenfuchs/globalize3/pull/32).
+For those interested, you can follow [the pull request here](https://github.com/svenfuchs/globalize3/pull/47).
 
 ## Empty forms (properties & taxons)
 Spree is using symbols instead of objects to define `form_for`'s for properties and taxons. This causes the forms to be empty. This can be fixed by overriding both edit pages with the changes found in [this pull request](https://github.com/spree/spree/pull/326).
