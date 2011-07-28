@@ -3,7 +3,7 @@
   <%= stylesheet_link_tag 'smoothness/jquery-ui-1.7.3.custom' %>
 <% end %>
 
-<div id="tabs">
+<div id="tabs" style="float: left; width: 65%; margin-left: 0;">
   <ul>
     <% I18n.available_locales.each do |l| %>
       <li><%= link_to t(l), "#tabs-#{l}" %></li>
