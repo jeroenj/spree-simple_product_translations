@@ -1,5 +1,6 @@
 <% content_for :head do %>
-  <%= javascript_include_tag 'jquery-ui-1.7.3.custom.min', 'simple_product_translations' %>
+  <%= javascript_include_tag 'jquery-ui-1.7.3.custom.min' %>
+  <%= javascript_tag "$(function(){ $('#tabs').tabs(); });" %>
   <%= stylesheet_link_tag 'smoothness/jquery-ui-1.7.3.custom' %>
 <% end %>
 
