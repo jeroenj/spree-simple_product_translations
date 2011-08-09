@@ -16,6 +16,10 @@ Then copy the migrations and assets to your spree application:
     rake spree_product_translations:install
     rake spree_simple_product_translations:install
 
+To apply the Smoothness theme to the jQuery UI tabs add the following to app/assets/stylesheets/admin/all.css:
+
+    *= require jquery-ui-smoothness    
+    
 Finally migrate your database:
 
     rake db:migrate
