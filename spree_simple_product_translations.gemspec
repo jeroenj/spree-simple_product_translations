@@ -13,8 +13,6 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.has_rdoc = false
-
   s.add_dependency('spree_core', '>= 0.40.3')
   s.add_dependency('spree_product_translations', '~> 0.0.3')
 end
