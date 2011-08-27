@@ -32,7 +32,7 @@ module SpreeSimpleProductTranslations
       end
 
       ::OptionType.class_eval do
-        accepts_nested_attributes_for :translations
+        accepts_nested_attributes_for :translations, :reject_if => proc { |attributes| attributes['presentation'].blank? }
         accepts_nested_attributes_for :option_values, :allow_destroy => true
       end
 
