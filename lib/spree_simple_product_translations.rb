@@ -17,11 +17,16 @@ module SpreeSimpleProductTranslations
       ::Product.class_eval do
         accepts_nested_attributes_for :translations
       end
-
+      
+      ::ProductProperty.class_eval do
+        accepts_nested_attributes_for :translations, :reject_if => proc { |attributes| attributes['value'].blank? }
+        validates_presence_of :value
+      end
+      
       ::Property.class_eval do
         accepts_nested_attributes_for :translations
       end
-
+      
       ::Taxon.class_eval do
         accepts_nested_attributes_for :translations
       end
@@ -32,8 +37,8 @@ module SpreeSimpleProductTranslations
       end
 
       ::OptionValue.class_eval do
-        accepts_nested_attributes_for :translations
-        validates_presence_of :name, :presentation
+        accepts_nested_attributes_for :translations, :reject_if => proc { |attributes| attributes['presentation'].blank? }
+        validates_presence_of :name
       end
     end
 
