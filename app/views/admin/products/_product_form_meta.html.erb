@@ -1,0 +1,21 @@
+<div class="tabs">
+  <ul>
+    <% I18n.available_locales.each do |l| %>
+      <li><%= link_to t(l), "#meta-tabs-#{l}" %></li>
+    <% end %>
+  </ul>
+  <% I18n.available_locales.each do |l| %>
+    <div id="meta-tabs-<%= l %>">
+    <%= f.globalize_fields_for l do |g| %>
+      <p>
+        <%= g.label :meta_keywords, t("meta_keywords")%><br />
+        <%= g.text_field :meta_keywords, :class => 'fullwidth' %>
+      </p>
+      <p>
+        <%= g.label :meta_description, t("meta_description")%><br />
+        <%= g.text_field :meta_description, :class => 'fullwidth' %>
+      </p>
+    <% end %>
+    </div>
+  <% end %>
+</div>

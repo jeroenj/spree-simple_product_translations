@@ -4,7 +4,7 @@
   <%= f.error_message_on :name %>
 <% end %>
 
-<div id="tabs">
+<div class="tabs">
   <ul>
     <% I18n.available_locales.each do |l| %>
       <li><%= link_to t(l), "#tabs-#{l}" %></li>

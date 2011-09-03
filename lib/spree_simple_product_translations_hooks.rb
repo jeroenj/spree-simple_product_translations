@@ -3,9 +3,15 @@ Deface::Override.new(
   :name => 'product_translation_tabs',
   :replace => "[data-hook='admin_product_form_left']",
   :partial => "admin/products/product_form_left")
+  
+Deface::Override.new(
+  :virtual_path => "admin/products/_form",
+  :name => 'product_translation_meta_tabs',
+  :replace => "[data-hook='admin_product_form_meta']",
+  :partial => "admin/products/product_form_meta")
                      
 Deface::Override.new(
   :virtual_path => "layouts/admin",
   :name => 'product_translation_js',
   :insert_bottom => "[data-hook='admin_inside_head']",
-  :text => %Q[<%= javascript_tag "$(function(){ $('#tabs').tabs(); });" %>])                   
+  :text => %Q[<%= javascript_tag "$(function(){ $('.tabs').livequery(function() { $(this).tabs(); }); });" %>])

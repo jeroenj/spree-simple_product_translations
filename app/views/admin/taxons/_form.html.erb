@@ -1,5 +1,5 @@
 <%= hook :admin_inside_taxon_form, {:f => f} do %>
-  <div id="tabs">
+  <div class="tabs">
     <ul>
       <% I18n.available_locales.each do |l| %>
         <li><%= link_to t(l), "#tabs-#{l}" %></li>
