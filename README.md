@@ -24,17 +24,13 @@ If you have pre-existing data, you'll need to run this rake task:
 
     rake spree:extensions:product_translations:globalize_legacy_data
 
+## Fallbacks for empty translations ##
+
+You might want to use fallbacks to the default locale if you haven't entered translations. By default fallbacks will only be loaded if the translation is `nil`. If you're entering translations through the forms, empty translations will be set to an empty string, causing fallbacks to not work. If you want to enable fallbacks for empty translations you can simply set the following configuration in an initializer in your app:
+
+    Spree::Config.set :fallbacks_for_empty_translations => true
+
 # Open issues
-## Globalize3
-In the current version of [Globalize3](https://github.com/svenfuchs/globalize3) there is an issue with fallbacks. When you add new translations in the forms, but leave some of them blank, they won't fall back to the default locale. This is because [Globalize3](https://github.com/svenfuchs/globalize3) only loads fallbacks when the values are nil. Because of the way Rails handles these attributes, they will be stored as blank strings into the database.
-
-If you are using the fallbacks, you can enable them by using the latest beta of [Globalize3](https://github.com/svenfuchs/globalize3) and [fallbacks branch of spree-product_translations](https://github.com/jeroenj/spree-product_translations/commits/fallbacks). In order to do so you'll need to at this in your Gemfile:
-
-    gem 'spree_product_translations', :git => 'git://github.com/jeroenj/spree-product_translations.git', :branch => 'fallbacks'
-    gem 'globalize3', '~> 0.2.0.beta3'
-
-As soon as [Globalize3](https://github.com/svenfuchs/globalize3) pushes out a new update, I'll update the installation method (and this extension).
-
 ## Empty forms (properties & taxons)
 Spree is using symbols instead of objects to define `form_for`'s for properties and taxons. This causes the forms to be empty. This can be fixed by overriding both edit pages with the changes found in [this pull request](https://github.com/spree/spree/pull/326).
 
