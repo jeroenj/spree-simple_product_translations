@@ -1,0 +1,18 @@
+<tr class="product_property fields"  data-hook="product_property">
+  <td class="property_name">
+    <%= f.text_field :property_name, :class => "autocomplete" %>
+  </td>
+  <td class="value">    
+    <% I18n.available_locales.each do |l| %>
+      <p>
+        <%= f.globalize_fields_for l do |g| %>
+          <%= g.label :value, "#{t(l)}: " %>
+          <%= g.text_field :value, :autocomplete => 'off' %><% if l.to_sym == I18n.default_locale %><span class="required">*</span><% end %>
+        <% end %>
+      </p>
+    <% end %>
+  </td>
+  <td class="actions">
+    <%= link_to_remove_fields t("remove"), f %>
+  </td>
+</tr>

@@ -1,9 +1,4 @@
-<% content_for :head do %>
-  <%= javascript_include_tag 'jquery-ui-1.7.3.custom.min', 'simple_product_translations' %>
-  <%= stylesheet_link_tag 'smoothness/jquery-ui-1.7.3.custom' %>
-<% end %>
-
-<div id="tabs">
+<div class="tabs" style="float: left; width: 65%; margin-left: 0;">
   <ul>
     <% I18n.available_locales.each do |l| %>
       <li><%= link_to t(l), "#tabs-#{l}" %></li>
