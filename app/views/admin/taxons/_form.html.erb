@@ -1,7 +1,10 @@
-<%= hook :admin_inside_taxon_form, {:f => f} do %>
-  <%= javascript_include_tag 'jquery-ui-1.7.3.custom.min', 'simple_product_translations' %>
+<% content_for :head do %>
+  <%= javascript_include_tag 'jquery-ui-1.7.3.custom.min' %>
+  <%= javascript_tag "$(function(){ $('#tabs').tabs(); });" %>
   <%= stylesheet_link_tag 'smoothness/jquery-ui-1.7.3.custom' %>
+<% end %>
 
+<%= hook :admin_inside_taxon_form, {:f => f} do %>
   <div id="tabs">
     <ul>
       <% I18n.available_locales.each do |l| %>
